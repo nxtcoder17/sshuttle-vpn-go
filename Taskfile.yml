@@ -1,0 +1,12 @@
+version: 3
+
+vars:
+  BinaryName: ssh-vpn
+
+tasks:
+  build:
+    cmds:
+      - go build -o ./bin/{{.BinaryName}} ./main.go
+  install:
+    cmds:
+      - cp ./bin/{{.BinaryName}} $HOME/.local/share/go/bin/{{.BinaryName}}
