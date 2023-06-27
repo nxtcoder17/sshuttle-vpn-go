@@ -9,4 +9,5 @@ tasks:
       - go build -o ./bin/{{.BinaryName}} ./main.go
   install:
     cmds:
-      - cp ./bin/{{.BinaryName}} $HOME/.local/share/go/bin/{{.BinaryName}}
+      - task: build
+      - cp ./bin/{{.BinaryName}} $HOME/.local/bin/
