@@ -75,6 +75,7 @@ func main() {
 	cmd.Env = append(cmd.Env,
 		fmt.Sprintf("POD_NAME=%s", name),
 		fmt.Sprintf("NAMESPACE=%s", namespace),
+		fmt.Sprintf("KUBECONFIG=%s", os.Getenv("KUBECONFIG")),
 	)
 
 	if err := cmd.Run(); err != nil {

@@ -23,8 +23,8 @@ shift 2;
 
 if [ "$namespace" != "" ]; then
   [ $debug = true ] && echo "exec kubectl exec -n $namespace -i $podName -- $*" >> "$tFile"
-  eval kubectl exec -n "$namespace" -i "$podName" -- "$@"
+  kubectl exec -n "$namespace" -i "$podName" -- "$@"
 else
   [ $debug = true ] && echo "exec kubectl exec -i $podName -- $*" >> "$tFile"
-  eval kubectl exec -i "$podName" -- "$@"
+  kubectl exec -i "$podName" -- "$@"
 fi
